@@ -29,7 +29,7 @@ internal class ThoughtWorker_ChildCount : ThoughtWorker
 
     protected override ThoughtState CurrentStateInternal(Pawn pawn)
     {
-        if (!pawn.Faction.IsPlayer) return false;
+        if (!pawn.Faction?.IsPlayer ?? false) return false;
         if (!pawn.Spawned) return false;
 
         RefreshChildCountForMap(pawn.Map);
