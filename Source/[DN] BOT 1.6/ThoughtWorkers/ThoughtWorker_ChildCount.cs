@@ -14,7 +14,7 @@ internal class ThoughtWorker_ChildCount : ThoughtWorker
 
     public override float MoodMultiplier(Pawn pawn)
     {
-        if (!pawn.Faction.IsPlayer) return 0f;
+        if (!pawn.Faction?.IsPlayer ?? false) return 0f;
         if (!pawn.Spawned) return 0f;
 
         RefreshChildCountForMap(pawn.Map);
